@@ -3,6 +3,7 @@ package de.lvm.client;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
@@ -62,7 +63,7 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 
 		ImageIcon bindings = new ImageIcon(getClass().getClassLoader().getResource("KeyBindings.png").getPath());
 		keyBindings = new JLabel(bindings);
-		keyBindings.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
+		keyBindings.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		getContentPane().add(keyBindings, BorderLayout.NORTH);
 
 		textField = new JTextField();
@@ -89,6 +90,23 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		}
 	}
 
+	private void undo() {
+		textField.setText("");
+		canvasCarImage.movePrevious();
+		String currentFile = canvasCarImage.getCurrentFile();
+		if (currentFile != null) {
+			String fileName = currentFile.substring(currentFile.lastIndexOf("/") + 1);
+			String baseFolder = workingDir + "/";
+			//Bild verschieben
+			try {
+				Files.move(Paths.get(currentFile), Paths.get(baseFolder + fileName), StandardCopyOption.REPLACE_EXISTING);
+				canvasCarImage.updateCurrentFile(baseFolder + fileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	/**
 	 * Prüft die eingegebene Zahl, verschiebt das Bild in den entsprechenden Ordner und zeigt das nächste Auto
 	 */
@@ -101,34 +119,41 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		int length = labelCode.length();
 		char[] ziffern = labelCode.toCharArray();
 
+		String currentFile = canvasCarImage.getCurrentFile();
+		if (currentFile != null) {
+			String fileName = currentFile.substring(currentFile.lastIndexOf("/") + 1);
+			String oldFolderPath = workingDir + "/";
+			//Blickrichtung
+			String newFolderPath = oldFolderPath;
+			if (ziffern[0] == '5') {
+				//In nicht kategorisierbar packen
+				newFolderPath += "nk/";
+			} else {
+				newFolderPath += getRichtungen().get(ziffern[0]) + "/";
+				//Schaden vorhanden
+				if (ziffern[1] == '1') {
+					newFolderPath += "J/";
+				} else {
+					newFolderPath += "N/";
+				}
+				//Schaden Position
+				if (length > 2) {
+					newFolderPath += getRichtungen().get(ziffern[2]) + "/";
+				}
+			}
 
-		String fileName = canvasCarImage.filename.substring(canvasCarImage.filename.lastIndexOf("/") + 1);
-		String oldFolderPath = workingDir + "/";
-		//Blickrichtung
-		String newFolderPath = oldFolderPath + getRichtungen().get(ziffern[0]) + "/";
-		//Schaden vorhanden
-		if (ziffern[1] == '1') {
-			newFolderPath += "J/";
-		} else {
-			newFolderPath += "N/";
+			//Ordner erstellen (Wenn er bereits existiert passiert nix
+			(new File(newFolderPath)).mkdirs();
+
+			//Bild verschieben
+			try {
+				Files.move(Paths.get(oldFolderPath + fileName), Paths
+						.get(newFolderPath + fileName), StandardCopyOption.REPLACE_EXISTING);
+				canvasCarImage.updateCurrentFile(newFolderPath + fileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		//Schaden Position
-		if (length > 2) {
-			newFolderPath += getRichtungen().get(ziffern[2]) + "/";
-		}
-
-
-		//Ordner erstellen (Wenn er bereits existiert passiert nix
-		(new File(newFolderPath)).mkdirs();
-
-		//Bild verschieben
-		try {
-			Files.copy(Paths.get(oldFolderPath + fileName), Paths
-					.get(newFolderPath + fileName), StandardCopyOption.REPLACE_EXISTING);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
 		textField.setText("");
 		canvasCarImage.moveNext();
 	}
@@ -138,8 +163,8 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		int length = labelCode.length();
 		char[] ziffern = labelCode.toCharArray();
 
-		if (length < 2){
-			showUsage("Die Zahl muss mindestens 2 Stellen haben.");
+		if (length < 1) {
+			showUsage("Die Zahl muss mindestens 1 Stellen haben.");
 			return false;
 		}
 		if (length > 3) {
@@ -152,31 +177,33 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 				return false;
 			}
 		}
-		if (ziffern[0] == '5') {
-			showUsage("5 ist für die erste Ziffer nicht gültig.");
+		if (ziffern[0] == '5' && length > 1) {
+			showUsage("5 dient zum verschieben des Bildes in 'Nicht Kategorisierbar'. Eine weitere zahl ist nicht nötig");
 			return false;
 		}
-		if (ziffern[length - 1] == '5') {
-			showUsage(ziffern[length - 1] + " ist für die letzte Ziffer nicht gültig.");
-			return false;
-		}
-		if (ziffern[1] > '1') {
-			showUsage("Die 2. Ziffer darf nur 0 (Kein Schaden) oder 1 (Schaden) sein");
-			return false;
-		}
-		if (length == 3) {
-			if (ziffern[2] == '0') {
-				showUsage("Die 3. Ziffer darf nicht 0 sein");
+		if (length > 1) {
+			if (ziffern[length - 1] == '5') {
+				showUsage(ziffern[length - 1] + " ist für die letzte Ziffer nicht gültig.");
 				return false;
 			}
-			if (ziffern[1] == '0') {
-				showUsage("Wenn kein Schaden zu sehen ist, braucht man die 3. Ziffer nicht.");
+			if (ziffern[1] > '1') {
+				showUsage("Die 2. Ziffer darf nur 0 (Kein Schaden) oder 1 (Schaden) sein");
 				return false;
 			}
-		}
-		if (length == 2 && ziffern[1] == '1') {
-			showUsage("Wenn das Auto einen Schaden hat, muss der Ort angegeben werden");
-			return false;
+			if (length == 3) {
+				if (ziffern[2] == '0') {
+					showUsage("Die 3. Ziffer darf nicht 0 sein");
+					return false;
+				}
+				if (ziffern[1] == '0') {
+					showUsage("Wenn kein Schaden zu sehen ist, braucht man die 3. Ziffer nicht.");
+					return false;
+				}
+			}
+			if (length == 2 && ziffern[1] == '1') {
+				showUsage("Wenn das Auto einen Schaden hat, muss der Ort angegeben werden");
+				return false;
+			}
 		}
 		return true;
 	}
@@ -187,8 +214,8 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 	private void showUsage(String headline) {
 		if (headline != null){
 			JOptionPane.showMessageDialog(this, headline
-					+"\nBitte geben Sie eine 2 - 3 stellige Zahl ein:\n"
-					+ "Erste Ziffer: Richtung der Aufnahme\n"
+					+"\nBitte geben Sie eine 1 - 3 stellige Zahl ein:\n"
+					+ "Erste Ziffer: Richtung der Aufnahme oder 5 wenn nicht Klassifizierbar.\n"
 					+ "Zweite Ziffer: ist ein Schaden zu sehen (1:ja, 0:nein)\n"
 					+ "Dritte Ziffer: Nur wenn ein Schaden zu sehen ist: Wo ist der Schaden.\n"
 					+ "Für die erste und 3. Ziffer gilt (Immer aus Fahrer Perspektive):\n"
@@ -205,7 +232,9 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		//Not used
+		if ((e.getKeyCode() == KeyEvent.VK_Z) && ((e.getModifiers() & InputEvent.CTRL_MASK) != 0)) {
+			undo();
+		}
 	}
 
 	@Override

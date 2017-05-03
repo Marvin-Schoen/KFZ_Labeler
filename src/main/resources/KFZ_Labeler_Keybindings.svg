@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Neues Dokument 1">
+   sodipodi:docname="KFZ_Labeler_Keybindings.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="274.10677"
-     inkscape:cy="828.96311"
+     inkscape:cx="559.53113"
+     inkscape:cy="779.23607"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -41,6 +41,18 @@
     <inkscape:grid
        type="xygrid"
        id="grid3848" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="408.70772,975.10025"
+       id="guide4062" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="451,835"
+       id="guide4066" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="709,886"
+       id="guide4103" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -60,7 +72,10 @@
      id="layer1">
     <g
        id="g3816"
-       transform="translate(-11.313709,114.5513)">
+       transform="translate(-11.313709,114.5513)"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789">
         <rect
@@ -83,7 +98,10 @@
     </g>
     <g
        transform="translate(83.912598,114.15403)"
-       id="g3816-3">
+       id="g3816-3"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-5">
         <rect
@@ -106,7 +124,10 @@
     </g>
     <g
        transform="translate(177.35479,114.4372)"
-       id="g3816-9">
+       id="g3816-9"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-1">
         <rect
@@ -129,7 +150,10 @@
     </g>
     <g
        transform="translate(-11.085514,199.69575)"
-       id="g3816-0">
+       id="g3816-0"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-9">
         <rect
@@ -152,7 +176,10 @@
     </g>
     <g
        transform="translate(177.02313,199.38543)"
-       id="g3816-0-6">
+       id="g3816-0-6"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-9-2">
         <rect
@@ -175,7 +202,10 @@
     </g>
     <g
        transform="translate(-11.596837,283.51263)"
-       id="g3816-8">
+       id="g3816-8"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-7">
         <rect
@@ -210,7 +240,10 @@
     </g>
     <g
        transform="translate(83.629462,283.11536)"
-       id="g3816-3-2">
+       id="g3816-3-2"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-5-3">
         <rect
@@ -233,7 +266,10 @@
     </g>
     <g
        transform="translate(177.07166,283.39854)"
-       id="g3816-9-9">
+       id="g3816-9-9"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-1-2">
         <rect
@@ -260,7 +296,10 @@
        x="228.74904"
        y="378.84296"
        id="text4018"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4020"
          x="228.74904"
@@ -272,7 +311,10 @@
        x="322.27832"
        y="378.48666"
        id="text4018-9"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4020-7"
          x="322.27832"
@@ -284,7 +326,10 @@
        x="131.87543"
        y="296.46503"
        id="text4043"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4045"
          x="131.87543"
@@ -296,7 +341,10 @@
        x="319.2587"
        y="295.75793"
        id="text4047"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4049"
          x="319.2587"
@@ -308,7 +356,10 @@
        x="131.87541"
        y="211.25867"
        id="text4051"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4053"
          x="131.87541"
@@ -320,7 +371,10 @@
        x="226.27417"
        y="209.13734"
        id="text4055"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4057"
          x="226.27417"
@@ -332,15 +386,21 @@
        x="321.38"
        y="210.19801"
        id="text4059"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4061"
          x="321.38"
          y="210.19801"
          style="font-size:40px">9</tspan></text>
     <g
-       transform="translate(328.42463,115.24533)"
-       id="g3816-8-3">
+       transform="translate(328.42463,79.24533)"
+       id="g3816-8-3"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-7-6">
         <rect
@@ -374,8 +434,11 @@
            style="font-size:40px;font-weight:bold;-inkscape-font-specification:Sans Bold">1</tspan></text>
     </g>
     <g
-       transform="translate(327.71753,199.74459)"
-       id="g3816-8-1">
+       transform="translate(327.71753,163.74459)"
+       id="g3816-8-1"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
       <a
          id="a3789-7-9">
         <rect
@@ -414,7 +477,10 @@
        x="143.35892"
        y="122.01067"
        id="text4113"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"><tspan
          sodipodi:role="line"
          id="tspan4115"
          x="143.35892"
@@ -426,7 +492,10 @@
        x="463.43552"
        y="121.57587"
        id="text4113-5"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"><tspan
          sodipodi:role="line"
          id="tspan4115-0"
          x="463.43552"
@@ -436,25 +505,31 @@
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
        x="541.44434"
-       y="209.55376"
+       y="173.55376"
        id="text4113-5-3"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6"
          x="541.44434"
-         y="209.55376"
+         y="173.55376"
          style="font-size:40px">Ja</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
        x="540.05109"
-       y="297.14169"
+       y="261.14169"
        id="text4113-5-3-1"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-0"
          x="540.05109"
-         y="297.14169"
+         y="261.14169"
          style="font-size:40px">Nein</tspan></text>
     <text
        xml:space="preserve"
@@ -462,7 +537,10 @@
        x="232.76118"
        y="161.73076"
        id="text4113-5-3-6"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3"
          x="232.76118"
@@ -474,7 +552,10 @@
        x="306.30029"
        y="161.73076"
        id="text4113-5-3-6-2"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3-0"
          x="306.30029"
@@ -486,7 +567,10 @@
        x="120.90337"
        y="161.64456"
        id="text4113-5-3-6-6"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3-1"
          x="120.90337"
@@ -498,7 +582,10 @@
        x="378.77875"
        y="299.26303"
        id="text4113-5-3-6-5"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3-5"
          x="378.77875"
@@ -510,7 +597,10 @@
        x="80.379669"
        y="299.26306"
        id="text4113-5-3-6-4"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3-7"
          x="80.379669"
@@ -522,7 +612,10 @@
        x="225.29694"
        y="439.25131"
        id="text4113-5-3-6-65"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3-6"
          x="225.29694"
@@ -534,7 +627,10 @@
        x="305.9071"
        y="438.54425"
        id="text4113-5-3-6-2-9"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3-0-3"
          x="305.9071"
@@ -546,11 +642,180 @@
        x="118.74242"
        y="439.16513"
        id="text4113-5-3-6-6-7"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"><tspan
          sodipodi:role="line"
          id="tspan4115-0-6-3-1-4"
          x="118.74242"
          y="439.16513"
          style="font-size:40px">HL</tspan></text>
+    <g
+       transform="translate(329.46457,254.8106)"
+       id="g3816-8-1-3"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
+      <a
+         id="a3789-7-9-6">
+        <rect
+           style="fill:#cfcfcf;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect3769-9-4-7"
+           width="75.959404"
+           height="71.096802"
+           x="122.61204"
+           y="51.979656"
+           ry="15.152288" />
+      </a>
+      <rect
+         ry="9.7180634"
+         y="59.287144"
+         x="131.87238"
+         height="45.59861"
+         width="48.717281"
+         id="rect3769-3-20-7-5"
+         style="fill:#e2e2e2;fill-opacity:1;stroke:#000000;stroke-width:1.2827189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="143.77272"
+         y="95.911263"
+         id="text3990-8-3"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3992-4-5"
+           x="143.77272"
+           y="95.911263"
+           style="font-size:40px;font-weight:bold;-inkscape-font-specification:Sans Bold">5</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="541.79816"
+       y="352.2077"
+       id="text4113-5-3-1-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"><tspan
+         sodipodi:role="line"
+         id="tspan4115-0-6-0-2"
+         x="541.79816"
+         y="352.2077"
+         style="font-size:40px">Nicht Klassifizierbar</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.9073174;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3274"
+       width="356.47449"
+       height="369.90955"
+       x="65.714592"
+       y="79.336906"
+       ry="9.4144831"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4064"
+       width="232.63812"
+       height="219.97266"
+       x="437.6991"
+       y="80.090355"
+       ry="6.3084002"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139" />
+    <g
+       transform="translate(330.40826,332.83413)"
+       id="g3816-8-3-1"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
+      <a
+         id="a3789-7-6-2">
+        <rect
+           style="fill:#cfcfcf;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect3769-9-1-7"
+           width="146.95941"
+           height="71.096802"
+           x="122.61204"
+           y="51.979656"
+           ry="15.152288" />
+      </a>
+      <rect
+         ry="9.7180634"
+         y="59.287144"
+         x="131.87238"
+         height="45.598614"
+         width="114.71729"
+         id="rect3769-3-20-2-0"
+         style="fill:#e2e2e2;fill-opacity:1;stroke:#000000;stroke-width:1.2827189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="143.77272"
+         y="95.911263"
+         id="text3990-9-9"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3992-3-3"
+           x="143.77272"
+           y="95.911263"
+           style="font-size:40px;font-weight:bold;-inkscape-font-specification:Sans Bold">Strg</tspan></text>
+    </g>
+    <g
+       transform="translate(490.40826,332.83413)"
+       id="g3816-8-3-6"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139">
+      <a
+         id="a3789-7-6-0">
+        <rect
+           style="fill:#cfcfcf;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect3769-9-1-6"
+           width="75.959404"
+           height="71.096802"
+           x="122.61204"
+           y="51.979656"
+           ry="15.152288" />
+      </a>
+      <rect
+         ry="9.7180634"
+         y="59.287144"
+         x="131.87238"
+         height="45.59861"
+         width="48.717281"
+         id="rect3769-3-20-2-2"
+         style="fill:#e2e2e2;fill-opacity:1;stroke:#000000;stroke-width:1.2827189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="143.77272"
+         y="95.911263"
+         id="text3990-9-6"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3992-3-1"
+           x="143.77272"
+           y="95.911263"
+           style="font-size:40px;font-weight:bold;-inkscape-font-specification:Sans Bold">Z</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="700.82031"
+       y="431.27429"
+       id="text4113-5-3-1-6-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="77.275139"
+       inkscape:export-ydpi="77.275139"
+       inkscape:export-filename="/u/m500034/workspace/MASTER/KFZ_Labeler/src/main/resources/KeyBindings.png"><tspan
+         sodipodi:role="line"
+         id="tspan4115-0-6-0-2-7"
+         x="700.82031"
+         y="431.27429"
+         style="font-size:40px">Rückgängig</tspan></text>
   </g>
 </svg>

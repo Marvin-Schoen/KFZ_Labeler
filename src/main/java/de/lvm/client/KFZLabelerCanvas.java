@@ -1,6 +1,8 @@
 package de.lvm.client;
 
 import java.awt.Canvas;
+import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -10,9 +12,6 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.HashMap;
 
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
 public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabelerConstants {
 	Image img;
 
@@ -20,7 +19,7 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 
 	HashMap<Integer, String> imgFiles;
 
-	String filename;
+	private String currentFile;
 
 	String workingDir;
 
@@ -29,15 +28,30 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 	KFZLabelerCanvas(String workingDir) {
 		this.workingDir = workingDir;
 		loadImages();
-		filename = null;
+		currentFile = null;
+	}
+
+	/**
+	 * @return currentFile
+	 */
+	public String getCurrentFile() {
+		return currentFile;
 	}
 
 	@Override
 	public void paint(Graphics g) {
-		if (filename != null) {
-			img = getToolkit().getImage(filename);
+		if (currentFile != null) {
+			img = getToolkit().getImage(currentFile);
+			drawIt(g, img);
+		} else {
+			img = getToolkit().getImage(getClass().getClassLoader().getResource("Ende.png").getPath());
 			drawIt(g, img);
 		}
+	}
+
+	public void updateCurrentFile(String newPath) {
+		currentFile = newPath;
+		imgFiles.put(curImgIndex, newPath);
 	}
 
 	public void drawIt(Graphics g, Image img) {
@@ -66,20 +80,18 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 		g2d.dispose();
 	}
 
+	public void drawText(Graphics g, String text) {
+		Graphics2D g2d = (Graphics2D) g;
+		FontMetrics fm = g2d.getFontMetrics();
+		g2d.clearRect(0, 0, getWidth(), getHeight());
+		Font font = new Font("Arial", Font.BOLD, 64);
+		g2d.setFont(font);
+		int w = fm.stringWidth(text);
+		int h = fm.getAscent();
 
-	public void storeImages() {
-		imgFiles = new HashMap<Integer, String>();
-		JFileChooser chooser = new JFileChooser();
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg", "gif", "png", "gif", "bmp");
-		chooser.setFileFilter(filter);
-		chooser.setMultiSelectionEnabled(true);
-		int returnVal = chooser.showOpenDialog(this);
-		if (returnVal == JFileChooser.APPROVE_OPTION) {
-			File[] Files = chooser.getSelectedFiles();
-			for (int i = 0; i < Files.length; i++) {
-				imgFiles.put(i, Files[i].toString());
-			}
-		}
+		g2d.drawString(text, getWidth() / 2 - 2 * w, getHeight() / 2 + h / 2);
+
+		g2d.dispose();
 	}
 
 	private void loadImages() {
@@ -116,7 +128,7 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 	public void moveFirst() {
 		if (!imgFiles.isEmpty()) {
 			curImgIndex = 0;
-			filename = imgFiles.get(curImgIndex);
+			currentFile = imgFiles.get(curImgIndex);
 			repaint();
 		}
 	}
@@ -124,7 +136,21 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 	public void moveNext() {
 		if (!imgFiles.isEmpty() && curImgIndex < imgFiles.size() - 1) {
 			curImgIndex++;
-			filename = imgFiles.get(curImgIndex);
+			currentFile = imgFiles.get(curImgIndex);
+			repaint();
+		} else {
+			currentFile = null;
+			repaint();
+		}
+	}
+
+	public void movePrevious() {
+		if (!imgFiles.isEmpty() && curImgIndex > 0) {
+			curImgIndex--;
+			currentFile = imgFiles.get(curImgIndex);
+			repaint();
+		} else {
+			currentFile = null;
 			repaint();
 		}
 	}
