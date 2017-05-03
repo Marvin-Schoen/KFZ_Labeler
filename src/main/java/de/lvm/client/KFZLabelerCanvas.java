@@ -1,10 +1,10 @@
 package de.lvm.client;
 
 import java.awt.Canvas;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.FileFilter;
@@ -16,7 +16,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabelerConstants {
 	Image img;
 
-	Dimension ds;
+
 
 	HashMap<Integer, String> imgFiles;
 
@@ -28,7 +28,6 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 
 	KFZLabelerCanvas(String workingDir) {
 		this.workingDir = workingDir;
-		ds = getToolkit().getScreenSize();
 		loadImages();
 		filename = null;
 	}
@@ -43,13 +42,30 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 
 	public void drawIt(Graphics g, Image img) {
 		Graphics2D g2d = (Graphics2D) g;
-		int x = getWidth() / 2 - img.getWidth(this) / 2;
-		int y = getHeight() - img.getHeight(this) - 10;
-		int w = img.getWidth(this);
-		int h = img.getHeight(this);
-		g2d.drawImage(img, x, y, w, h, this);
 
+		//Wir skalieren das Bild damit es in die Canvas passt, dazu 
+		//Schauen wir welche Dimension die Skalierung bestimmt: Höhe oder Breite
+		//Diese Größe gibt den Scale Faktor for, damit das Bild sein
+		//Seitenverhältnis behält
+		int diffWidth = img.getWidth(this) - getWidth();
+		int diffHeight = img.getHeight(this) - getHeight();
+		float scaleFactor = 1f;
+		if (diffHeight > 0 || diffWidth > 0) {
+			if (diffHeight > diffWidth){
+				scaleFactor = (float) getHeight() / img.getHeight(this);
+			} else {
+				scaleFactor = (float) getWidth() / img.getWidth(this);
+			}
+		}
+		int h = Math.round(img.getHeight(this) * scaleFactor);
+		int w = Math.round(img.getWidth(this) * scaleFactor);
+		int x = getWidth() / 2 - w / 2;
+		int y = getHeight() - h;
+		g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+		g2d.drawImage(img, x, y, w, h, this);
+		g2d.dispose();
 	}
+
 
 	public void storeImages() {
 		imgFiles = new HashMap<Integer, String>();

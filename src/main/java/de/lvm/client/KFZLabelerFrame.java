@@ -26,7 +26,7 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 
 	JPanel panel;
 
-	KFZLabelerCanvas carImage;
+	KFZLabelerCanvas canvasCarImage;
 
 	JLabel keyBindings;
 
@@ -70,12 +70,13 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		textField.setColumns(3);
 		textField.addKeyListener(this);
 
-		carImage = new KFZLabelerCanvas(workingDir);
-		getContentPane().add(carImage, BorderLayout.CENTER);
+		canvasCarImage = new KFZLabelerCanvas(workingDir);
+		getContentPane().add(canvasCarImage, BorderLayout.CENTER);
 		setVisible(true);
-		
-		carImage.moveFirst();
-		carImage.paint(getGraphics());
+		canvasCarImage.setSize(800, 600);
+		canvasCarImage.moveFirst();
+		canvasCarImage.paint(getGraphics());
+		this.pack();
 
 	}
 
@@ -101,7 +102,7 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		char[] ziffern = labelCode.toCharArray();
 
 
-		String fileName = carImage.filename.substring(carImage.filename.lastIndexOf("/") + 1);
+		String fileName = canvasCarImage.filename.substring(canvasCarImage.filename.lastIndexOf("/") + 1);
 		String oldFolderPath = workingDir + "/";
 		//Blickrichtung
 		String newFolderPath = oldFolderPath + getRichtungen().get(ziffern[0]) + "/";
@@ -129,7 +130,7 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		}
 
 		textField.setText("");
-		carImage.moveNext();
+		canvasCarImage.moveNext();
 	}
 
 	private boolean checkInput() {
@@ -163,12 +164,18 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 			showUsage("Die 2. Ziffer darf nur 0 (Kein Schaden) oder 1 (Schaden) sein");
 			return false;
 		}
-		if (length == 3 && ziffern[2] == '0') {
-			showUsage("Die 3. Ziffer darf nicht 0 sein");
-			return false;
+		if (length == 3) {
+			if (ziffern[2] == '0') {
+				showUsage("Die 3. Ziffer darf nicht 0 sein");
+				return false;
+			}
+			if (ziffern[1] == '0') {
+				showUsage("Wenn kein Schaden zu sehen ist, braucht man die 3. Ziffer nicht.");
+				return false;
+			}
 		}
-		if (length == 3 && ziffern[1] == '0') {
-			showUsage("Wenn kein Schaden zu sehen ist, braucht man die 3. Ziffer nicht.");
+		if (length == 2 && ziffern[1] == '1') {
+			showUsage("Wenn das Auto einen Schaden hat, muss der Ort angegeben werden");
 			return false;
 		}
 		return true;
