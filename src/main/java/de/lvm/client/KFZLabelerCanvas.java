@@ -7,10 +7,15 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
+
+import javax.imageio.ImageIO;
 
 public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabelerConstants {
 	Image img;
@@ -44,7 +49,15 @@ public class KFZLabelerCanvas extends Canvas implements ImageObserver, KFZLabele
 			img = getToolkit().getImage(currentFile);
 			drawIt(g, img);
 		} else {
-			img = getToolkit().getImage(getClass().getClassLoader().getResource("Ende.png").getPath());
+			InputStream endStream = getClass().getClassLoader().getResourceAsStream("Ende.png");
+			BufferedImage endBI = new BufferedImage(50, 50, 1); //Dummy
+			try {
+				endBI = ImageIO.read(endStream);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			img = endBI;
 			drawIt(g, img);
 		}
 	}

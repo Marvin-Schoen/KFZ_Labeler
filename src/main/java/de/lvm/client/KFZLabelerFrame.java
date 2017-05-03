@@ -6,14 +6,17 @@ import java.awt.FlowLayout;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -61,7 +64,16 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		panel.setBackground(new Color(75, 168, 41));
 		getContentPane().add(panel, BorderLayout.SOUTH);
 
-		ImageIcon bindings = new ImageIcon(getClass().getClassLoader().getResource("KeyBindings.png").getPath());
+		InputStream kbStream = getClass().getClassLoader().getResourceAsStream("KeyBindings.png");
+		BufferedImage biBindings;
+		ImageIcon bindings = new ImageIcon();
+		try {
+			biBindings = ImageIO.read(kbStream);
+			bindings = new ImageIcon(biBindings);
+		} catch (IOException e) {
+			// Bitte kommentieren !!!
+		}
+
 		keyBindings = new JLabel(bindings);
 		keyBindings.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		getContentPane().add(keyBindings, BorderLayout.NORTH);
@@ -164,7 +176,7 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		char[] ziffern = labelCode.toCharArray();
 
 		if (length < 1) {
-			showUsage("Die Zahl muss mindestens 1 Stellen haben.");
+			showUsage("Die Zahl muss mindestens eine Stelle haben.");
 			return false;
 		}
 		if (length > 3) {
@@ -176,6 +188,10 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 				showUsage("Als Eingabe sind nur ziffern erlaubt");
 				return false;
 			}
+		}
+		if (length == 1 && ziffern[0] != '5') {
+			showUsage(ziffern[0] + "ist keine Gültige Eingabe");
+			return false;
 		}
 		if (ziffern[0] == '5' && length > 1) {
 			showUsage("5 dient zum verschieben des Bildes in 'Nicht Kategorisierbar'. Eine weitere zahl ist nicht nötig");
