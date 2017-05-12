@@ -128,7 +128,6 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		}
 
 		String labelCode = textField.getText();
-		int length = labelCode.length();
 		char[] ziffern = labelCode.toCharArray();
 
 		String currentFile = canvasCarImage.getCurrentFile();
@@ -139,18 +138,14 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 			String newFolderPath = oldFolderPath;
 			if (ziffern[0] == '5') {
 				//In nicht kategorisierbar packen
-				newFolderPath += "nk/";
+				newFolderPath += "Papierkorb/";
 			} else {
-				newFolderPath += getRichtungen().get(ziffern[0]) + "/";
-				//Schaden vorhanden
+				newFolderPath += "Ansicht_" + getRichtungen().get(ziffern[0]) + "/";
 				if (ziffern[1] == '1') {
-					newFolderPath += "J/";
+					//Schaden vorhanden
+					newFolderPath += "Schaden_" + getRichtungen().get(ziffern[2]) + "/";
 				} else {
-					newFolderPath += "N/";
-				}
-				//Schaden Position
-				if (length > 2) {
-					newFolderPath += getRichtungen().get(ziffern[2]) + "/";
+					newFolderPath += "keinSchaden/";
 				}
 			}
 
@@ -261,14 +256,14 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 	private Map<Character, String> getRichtungen() {
 		if (richtungen == null) {
 			richtungen = new HashMap<>();
-			richtungen.put('1', "HL");
-			richtungen.put('2', "H");
-			richtungen.put('3', "HR");
-			richtungen.put('4', "L");
-			richtungen.put('6', "R");
-			richtungen.put('7', "VL");
-			richtungen.put('8', "V");
-			richtungen.put('9', "VR");
+			richtungen.put('1', "hintenlinks");
+			richtungen.put('2', "hinten");
+			richtungen.put('3', "hintenrechts");
+			richtungen.put('4', "links");
+			richtungen.put('6', "rechts");
+			richtungen.put('7', "vornelinks");
+			richtungen.put('8', "vorne");
+			richtungen.put('9', "vornerechts");
 		}
 		return richtungen;
 	}
