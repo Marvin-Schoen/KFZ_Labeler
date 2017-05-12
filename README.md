@@ -16,9 +16,12 @@ Dieses Tool vereinfacht diesen Prozess, indem es die Bilder in einem ausgewhält
 1. Richtung der Ansicht aus Fahrerperspektive
 2. Schaden vorhanden
 3. Position des Schadens
+
 Das Tool Sortiert das Bild dann automatisch richtig. **Bilder die nicht verwendbar sind**, weil sie z.B. zu wenig vom Auto zeigen oder ein Gesicht in einer Spiegelung zeigen, werden mit 5 gelabelt.
 
 ### Beispiele
+Code | Bedeutung
+-----|---------
 `817` | Ansicht vorne, Schaden vorne links
 `20` | Ansicht hinten, Kein Schaden
 `619` | Ansicht rechts, Schaden vorne reichts
