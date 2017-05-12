@@ -3,6 +3,7 @@ package de.lvm.client;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -79,6 +80,7 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		getContentPane().add(keyBindings, BorderLayout.NORTH);
 
 		textField = new JTextField();
+		textField.setFont(new Font("Dialog", Font.PLAIN, 32));
 		panel.add(textField);
 		textField.setColumns(3);
 		textField.addKeyListener(this);
