@@ -109,8 +109,8 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 		canvasCarImage.movePrevious();
 		String currentFile = canvasCarImage.getCurrentFile();
 		if (currentFile != null) {
-			String fileName = currentFile.substring(currentFile.lastIndexOf("/") + 1);
-			String baseFolder = workingDir + "/";
+			String fileName = currentFile.substring(currentFile.lastIndexOf(File.separator) + 1);
+			String baseFolder = workingDir + File.separator;
 			//Bild verschieben
 			try {
 				Files.move(Paths.get(currentFile), Paths.get(baseFolder + fileName), StandardCopyOption.REPLACE_EXISTING);
@@ -134,20 +134,20 @@ class KFZLabelerFrame extends JFrame implements KeyListener, KFZLabelerConstants
 
 		String currentFile = canvasCarImage.getCurrentFile();
 		if (currentFile != null) {
-			String fileName = currentFile.substring(currentFile.lastIndexOf("/") + 1);
-			String oldFolderPath = workingDir + "/";
+			String fileName = currentFile.substring(currentFile.lastIndexOf(File.separator) + 1);
+			String oldFolderPath = workingDir + File.separator;
 			//Blickrichtung
 			String newFolderPath = oldFolderPath;
 			if (ziffern[0] == '5') {
 				//In nicht kategorisierbar packen
-				newFolderPath += "Papierkorb/";
+				newFolderPath += "Papierkorb" + File.separator;
 			} else {
-				newFolderPath += "Ansicht_" + getRichtungen().get(ziffern[0]) + "/";
+				newFolderPath += "Ansicht_" + getRichtungen().get(ziffern[0]) + File.separator;
 				if (ziffern[1] == '1') {
 					//Schaden vorhanden
-					newFolderPath += "Schaden_" + getRichtungen().get(ziffern[2]) + "/";
+					newFolderPath += "Schaden_" + getRichtungen().get(ziffern[2]) + File.separator;
 				} else {
-					newFolderPath += "keinSchaden/";
+					newFolderPath += "keinSchaden" + File.separator;
 				}
 			}
 
